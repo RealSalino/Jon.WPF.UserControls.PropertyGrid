@@ -1,1 +1,1 @@
-# Jon.WPF
+# Jon.WPF.UserControls.PropertyGrid
