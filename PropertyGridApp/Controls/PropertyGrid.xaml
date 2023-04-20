@@ -1,0 +1,48 @@
+﻿<UserControl
+    x:Class="PropertyGridApp.Controls.PropertyGrid"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:PropertyGridApp.Controls"
+    MinWidth="300"
+    MinHeight="450"
+    ScrollViewer.HorizontalScrollBarVisibility="Hidden">
+
+    <Border
+        BorderBrush="Black"
+        BorderThickness=".5"
+        CornerRadius="3"
+        ScrollViewer.VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Border
+                Grid.Row="0"
+                Background="#F1F1F1"
+                BorderBrush="#8C8C8C"
+                BorderThickness="1">
+                <StackPanel>
+                    <TextBlock
+                        x:Name="TextBlockObjectTypeName"
+                        Margin="8,3,5,2"
+                        FontSize="14"
+                        FontWeight="SemiBold" />
+                    <TextBlock
+                        x:Name="TextBlockDescription"
+                        Margin="12,2,5,2"
+                        FontSize="11"
+                        FontStyle="Italic"
+                        FontWeight="Light"
+                        TextWrapping="WrapWithOverflow" />
+                </StackPanel>
+            </Border>
+            <local:PropertyGridControl
+                x:Name="propertyGridControl"
+                Grid.Row="1"
+                HorizontalAlignment="Stretch" />
+
+
+        </Grid>
+    </Border>
+</UserControl>

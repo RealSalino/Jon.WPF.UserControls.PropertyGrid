@@ -1,0 +1,76 @@
+﻿<Window
+    x:Class="ControlDriver.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:ControlDriver"
+    xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+    xmlns:mah1="http://metro.mahapps.com/winfx/xaml/controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.modernwpf.com/2019"
+    xmlns:views="clr-namespace:Jon.WPF.UserControls.Controls.Views;assembly=Jon.WPF.UserControls"
+    Title="MainWindow"
+    mc:Ignorable="d" Height="3134" Width="1870">
+    <Window.Resources>
+        <mah1:ColorToSolidColorBrushConverter x:Key="ColorToSolidColorBrushConverter" />
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="400" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="400" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0">
+            <TextBlock Text="CategoryColor" TextAlignment="Center" />
+            <mah:ColorPicker
+                x:Name="ColorPickerCategoryColor"
+                Width="64"
+                Height="64"
+                SelectedColorChanged="ColorPickerCategoryColor_SelectedColorChanged" />
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="0">
+            <TextBlock Text="CategoryForeground" TextAlignment="Center" />
+            <mah:ColorPicker
+                x:Name="ColorPickerCategoryForeground"
+                Width="64"
+                Height="64"
+                SelectedColorChanged="ColorPickerCategoryForeground_SelectedColorChanged" />
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="2">
+            <TextBlock Text="CategoryBackground" TextAlignment="Center" />
+            <mah:ColorPicker
+                x:Name="ColorPickerCategoryBackground"
+                Width="64"
+                Height="64"
+                SelectedColorChanged="ColorPickerCategoryBackground_SelectedColorChanged" />
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="2">
+            <TextBlock Text="HeaderBackgroundBrush" TextAlignment="Center" />
+            <mah:ColorPicker
+                x:Name="ColorPickerHeaderBackgroundBrus"
+                Width="64"
+                Height="64"
+                SelectedColorChanged="ColorPickerHeaderBackgroundBrus_SelectedColorChanged" />
+        </StackPanel>
+
+        <views:PropertyGrid
+            x:Name="PropertyGridMain"
+            Grid.Row="1"
+            Grid.Column="1"
+            VerticalAlignment="Top" />
+
+        <views:PropertyGrid
+            x:Name="PropertyGridPropertyGrid"
+            Grid.Row="1"
+            Grid.Column="3"
+            SelectedObject="{Binding ElementName=PropertyGridMain, Mode=OneWay}" />
+
+
+    </Grid>
+</Window>
